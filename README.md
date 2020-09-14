@@ -1,5 +1,13 @@
 ## REACT WITH AKS
 
+### Getting started
+
+1.  `git clone https://github.com/olalium/react-with-AKS.git`
+2.  navigate to dockerfile
+3.  `docker build -t 'splashpage:latest' .`
+4.  `docker run -d -p 8080:8080 splashpage:latest`
+5.  open browser at [http://localhost:8080/](http://localhost:8080/)
+
 ### About
 This repository define a simple React app which is able to run in Azure Kubernetes Service. Any changes made to the master branch is automatically pushed to ACR and AKS using Github Actions.
 
@@ -18,6 +26,8 @@ To push changes to Azure we utilize GitHub Actions. The workflow configuration i
 
 ### Prerequisites
 The code in this repository does not create or initiate the Azure resources needed to run AKS. [This workshop](https://docs.microsoft.com/en-us/learn/modules/aks-workshop/02-deploy-aks) describes the steps needed to deploy Kubernetes with AKS. Using the relevant pieces of the workshop should enable you to create and deploy your own AKS.
+
+To run the code locally you must have Docker installed.
 
 ### Glossary
 ACR = Azure Container Registry
