@@ -48,4 +48,4 @@ jobs:
         id: login
       
       - run: |
-          kubectl set image deployment/splashpage splashpage=${{ secrets.REGISTRY_URL }}/splashpage:${{ github.sha }} --namespace=dfindsplash
+          kubectl set image deployment/splashpage splashpage=${{ secrets.REGISTRY_URL }}/splashpage:${{ github.sha }} --namespace=${{ secrets.AZURE_NAMESPACE }}
