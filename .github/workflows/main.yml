@@ -34,7 +34,7 @@ jobs:
       
       - uses: azure/setup-kubectl@v1
         with:
-          version: '1.15.0'
+          version: 'v1.15.0'
         id: install
       
       - uses: azure/aks-set-context@v1
