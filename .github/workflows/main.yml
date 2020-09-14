@@ -29,5 +29,5 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
       - run: |
-          docker build . -t ${{ secrets.REGISTRY_URL }}:${{ github.sha }}
-          docker push ${{ secrets.REGISTRY_URL }}:${{ github.sha }}
+          docker build . -t ${{ secrets.REGISTRY_URL }}/splashpage:${{ github.sha }}
+          docker push ${{ secrets.REGISTRY_URL }}/splashpage:${{ github.sha }}
