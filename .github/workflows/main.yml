@@ -31,3 +31,18 @@ jobs:
       - run: |
           docker build . -t ${{ secrets.REGISTRY_URL }}/splashpage:${{ github.sha }}
           docker push ${{ secrets.REGISTRY_URL }}/splashpage:${{ github.sha }}
+      
+      - uses: azure/setup-kubectl@v1
+        with:
+          version: '1.15.0'
+        id: install
+      
+      - uses: azure/aks-set-context@v1
+        with:
+            creds: '${{ secrets.AZURE_CREDENTIALS }}' # Azure credentials
+            resource-group: ${{ secrets.AZURE_RESOURCE_GROUP }}
+            cluster-name: ${{ secrets.AZURE_CLUSTER_NAME }}
+        id: login
+      
+      - run: |
+          kubectl set image deployment/splashpage splashpage=splashpage:${{ github.sha }}
