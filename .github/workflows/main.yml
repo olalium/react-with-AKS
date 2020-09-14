@@ -45,4 +45,4 @@ jobs:
         id: login
       
       - run: |
-          kubectl set image deployment/splashpage splashpage=splashpage:${{ github.sha }}
+          kubectl set image deployment/splashpage splashpage=splashpage:${{ github.sha }} --namespace=dfindsplash
